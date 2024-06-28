@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Выбор поездок</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <h1>Введите данные о поездках</h1>
     <form id="tripForm">
-        <label for="date">Дата:</label>
-        <input type="date" id="date" name="date" value=""><br>
-        <label for="groundTransport">Наземный транспорт:</label>
-        <input type="number" id="groundTransport" name="groundTransport" min="0" value="0"><br>
-        <label for="trains">Электрички:</label>
-        <input type="number" id="trains" name="trains" min="0" value="0"><br>
-        <label for="additionalMetro">Доп. поездки на метро:</label>
-        <input type="number" id="additionalMetro" name="additionalMetro" min="0" value="0"><br>
-        <label for="additionalTrains">Доп. поездки на электричке:</label>
-        <input type="number" id="additionalTrains" name="additionalTrains" min="0" value="0"><br>
-        <button type="button" onclick="submitForm()">Отправить</button>
+      <label for="date">Дата:</label>
+      <input type="date" id="date" name="date" value="" /><br />
+      <label for="groundTransport">Наземный транспорт:</label>
+      <input
+        type="number"
+        id="groundTransport"
+        name="groundTransport"
+        min="0"
+        value="0"
+      /><br />
+      <label for="trains">Электрички:</label>
+      <input type="number" id="trains" name="trains" min="0" value="0" /><br />
+      <label for="additionalMetro">Доп. поездки на метро:</label>
+      <input
+        type="number"
+        id="additionalMetro"
+        name="additionalMetro"
+        min="0"
+        value="0"
+      /><br />
+      <label for="additionalTrains">Доп. поездки на электричке:</label>
+      <input
+        type="number"
+        id="additionalTrains"
+        name="additionalTrains"
+        min="0"
+        value="0"
+      /><br />
+      <button type="button" onclick="submitForm()">Отправить</button>
     </form>
-    <button onclick="window.location.href='table.html'">Посмотреть таблицу</button>
+    <button onclick="window.location.href='table.html'">
+      Посмотреть таблицу
+    </button>
+    <button onclick="calculateSavings()">Сколько удалось сэкономить</button>
+
+    <div class="footer">
+      <div id="totalTrips">Всего поездок: 0</div>
+      <div id="currentTime"></div>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

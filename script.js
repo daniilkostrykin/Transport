@@ -4,7 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const today = new Date().toISOString().split('T')[0];
         dateInput.value = today;
     }
+
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+
+    updateTotalTrips();
 });
+
+function updateCurrentTime() {
+    const currentTimeElement = document.getElementById('currentTime');
+    if (currentTimeElement) {
+        const now = new Date();
+        currentTimeElement.textContent = now.toLocaleTimeString();
+    }
+}
+
+function updateTotalTrips() {
+    const trips = JSON.parse(localStorage.getItem('trips')) || [];
+    const totalTrips = trips.reduce((total, trip) => total + trip.total, 0);
+
+    const totalTripsElement = document.getElementById('totalTrips');
+    if (totalTripsElement) {
+        totalTripsElement.textContent = `Всего поездок: ${totalTrips}`;
+    }
+}
 
 function submitForm() {
     const date = document.getElementById('date').value;
@@ -14,6 +37,7 @@ function submitForm() {
     const additionalTrains = document.getElementById('additionalTrains').value;
 
     const total = parseInt(groundTransport) + parseInt(trains) + parseInt(additionalMetro) + parseInt(additionalTrains);
+    const tripCost = calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains);
 
     const tripData = {
         date: date,
@@ -21,7 +45,8 @@ function submitForm() {
         trains: parseInt(trains),
         additionalMetro: parseInt(additionalMetro),
         additionalTrains: parseInt(additionalTrains),
-        total: total
+        total: total,
+        tripCost: tripCost.toFixed(2)
     };
 
     let trips = JSON.parse(localStorage.getItem('trips')) || [];
@@ -34,7 +59,24 @@ function submitForm() {
     }
 
     localStorage.setItem('trips', JSON.stringify(trips));
+    updateTotalTrips();
     window.location.href = 'table.html';
+}
+
+function calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains) {
+    const groundTransportCost = groundTransport * 30; // Коэффициент для наземного транспорта
+    const trainsCost = trains * 50; // Коэффициент для электричек
+    const additionalMetroCost = additionalMetro * 20; // Коэффициент для доп. поездок на метро
+    const additionalTrainsCost = additionalTrains * 40; // Коэффициент для доп. поездок на электричке
+    return groundTransportCost + trainsCost + additionalMetroCost + additionalTrainsCost;
+}
+
+function calculateSavings() {
+    const trips = JSON.parse(localStorage.getItem('trips')) || [];
+    const totalCost = trips.reduce((total, trip) => total + parseFloat(trip.tripCost), 0);
+    const passCost = 2000; // Цена проездного, заданная разработчиком
+    const savings = totalCost - passCost;
+    alert(`Сэкономлено на транспорте: ${savings.toFixed(2)} руб.`);
 }
 
 function generateDates() {
@@ -49,7 +91,8 @@ function generateDates() {
             trains: 0,
             additionalMetro: 0,
             additionalTrains: 0,
-            total: 0
+            total: 0,
+            tripCost: (0).toFixed(2)
         });
         startDate.setDate(startDate.getDate() + 1);
     }
@@ -88,7 +131,7 @@ function downloadExcel() {
     XLSX.writeFile(workbook, "trips.xlsx");
 }
 
-// Загружаем данные в таблицу при открытии страницы table.html
 if (document.querySelector('#tripTable')) {
     loadTable();
 }
+//123
