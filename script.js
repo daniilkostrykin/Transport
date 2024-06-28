@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+    }
+});
+
 function submitForm() {
     const date = document.getElementById('date').value;
     const groundTransport = document.getElementById('groundTransport').value;
@@ -9,20 +17,50 @@ function submitForm() {
 
     const tripData = {
         date: date,
-        groundTransport: groundTransport,
-        trains: trains,
-        additionalMetro: additionalMetro,
-        additionalTrains: additionalTrains,
+        groundTransport: parseInt(groundTransport),
+        trains: parseInt(trains),
+        additionalMetro: parseInt(additionalMetro),
+        additionalTrains: parseInt(additionalTrains),
         total: total
     };
 
     let trips = JSON.parse(localStorage.getItem('trips')) || [];
-    trips.push(tripData);
+    const index = trips.findIndex(trip => trip.date === date);
+
+    if (index !== -1) {
+        trips[index] = tripData;
+    } else {
+        trips.push(tripData);
+    }
+
     localStorage.setItem('trips', JSON.stringify(trips));
     window.location.href = 'table.html';
 }
 
+function generateDates() {
+    const startDate = new Date('2024-06-25');
+    const endDate = new Date('2024-09-22');
+    const dates = [];
+
+    while (startDate <= endDate) {
+        dates.push({
+            date: startDate.toISOString().split('T')[0],
+            groundTransport: 0,
+            trains: 0,
+            additionalMetro: 0,
+            additionalTrains: 0,
+            total: 0
+        });
+        startDate.setDate(startDate.getDate() + 1);
+    }
+
+    localStorage.setItem('trips', JSON.stringify(dates));
+}
+
 function loadTable() {
+    if (!localStorage.getItem('trips')) {
+        generateDates();
+    }
     const trips = JSON.parse(localStorage.getItem('trips')) || [];
 
     const tableBody = document.querySelector('#tripTable tbody');
@@ -43,20 +81,11 @@ function loadTable() {
 
 function downloadExcel() {
     const trips = JSON.parse(localStorage.getItem('trips')) || [];
-    let csvContent = 'data:text/csv;charset=utf-8,Дата,Наземный транспорт,Электрички,Доп. поездки на метро,Доп. поездки на электричке,Итого\n';
+    const worksheet = XLSX.utils.json_to_sheet(trips);
+    const workbook = XLSX.utils.book_new();
 
-    trips.forEach(trip => {
-        csvContent += `${trip.date},${trip.groundTransport},${trip.trains},${trip.additionalMetro},${trip.additionalTrains},${trip.total}\n`;
-    });
-
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'trips.csv');
-    document.body.appendChild(link);
-
-    link.click();
-    document.body.removeChild(link);
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Trips");
+    XLSX.writeFile(workbook, "trips.xlsx");
 }
 
 // Загружаем данные в таблицу при открытии страницы table.html
