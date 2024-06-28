@@ -64,10 +64,10 @@ function submitForm() {
 }
 
 function calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains) {
-    const groundTransportCost = groundTransport * 30; // Коэффициент для наземного транспорта
-    const trainsCost = trains * 50; // Коэффициент для электричек
-    const additionalMetroCost = additionalMetro * 20; // Коэффициент для доп. поездок на метро
-    const additionalTrainsCost = additionalTrains * 40; // Коэффициент для доп. поездок на электричке
+    const groundTransportCost = groundTransport * 57; // Коэффициент для наземного транспорта
+    const trainsCost = trains * 76; // Коэффициент для электричек
+    const additionalMetroCost = additionalMetro * 57; // Коэффициент для доп. поездок на метро
+    const additionalTrainsCost = additionalTrains * 76; // Коэффициент для доп. поездок на электричке
     return groundTransportCost + trainsCost + additionalMetroCost + additionalTrainsCost;
 }
 
