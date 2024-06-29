@@ -8,10 +8,8 @@
   <body>
     <div class="all">
       <form id="tripForm">
-        <div id="date">
-          <label for="date">Дата:</label>
-          <input type="date" id="date" name="date" value="" />
-        </div>
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" value="" />
         <br />
         <label for="groundTransport">Наземный транспорт:</label>
         <input
@@ -45,20 +43,24 @@
           min="0"
           value="0"
         /><br />
+
         <button id="submit" type="button" onclick="submitForm()">
           Отправить
         </button>
       </form>
-      <button id="watch" onclick="window.location.href='table.html'">
-        Посмотреть таблицу
-      </button>
-      <button id="economy" onclick="calculateSavings()">Экономия</button>
+      <div class="buttons">
+        <button id="watch" onclick="window.location.href='table.html'">
+          Посмотреть таблицу
+        </button>
+        <button id="economy" onclick="calculateSavings()">Экономия</button>
 
-      <div class="footer">
-        <div id="totalTrips">Всего поездок: 0</div>
-        <div id="currentTime"></div>
+        <div class="footer">
+          <div id="totalTrips">Всего поездок: 0</div>
+          <div id="currentTime"></div>
+        </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

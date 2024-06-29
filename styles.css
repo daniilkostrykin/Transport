@@ -51,16 +51,23 @@ button {
   font-weight: 600;
 }
 #submit {
-  left: 1000px;
+  left: 100px;
   top: 100000px;
 }
 #watch {
-  left: 10px;
-  top: 10px;
+  position: relative;
+  left: -27px;
+  top: -168px;
 }
 #economy {
-  left: 10px;
-  top: 10px;
+  position: relative;
+  left: 145px;
+  top: -162px;
+}
+#tripForm {
+  position: relative;
+  top: 50%;
+  left: 15%;
 }
 
 /* Новые стили для input */
@@ -78,7 +85,6 @@ input[type="date"] {
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus {
-  background-color: #45a049; /* Цвет фона при фокусе */
   border-color: #0000ff; /* Цвет границы при фокусе */
 }
 .footer {
