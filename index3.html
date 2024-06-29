@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around; /* Равномерно распределяем кнопки */
+  width: 200px; /* Ширина контейнера кнопок */
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form">
+    <!-- Форма заполнения -->
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <!-- Конец формы заполнения -->
+  </div>
+
+  <div class="buttons">
+    <button class="button">Отправить</button>
+    <button class="button">Сбросить</button>
+  </div>
+</div>
+
+</body>
+</html>
