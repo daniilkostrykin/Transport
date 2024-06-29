@@ -1,18 +1,19 @@
 body {
-  font-family: Arial, sans-serif;
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 50px; /* Footer height */
-}
-
-h1 {
-  text-align: center;
+  font-family: sans-serif;
+  min-height: 100dvh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #ffff;
+  font-size: 1rem;
 }
 
 form,
 table {
-  margin: 0 auto;
+  margin: 100 auto;
   width: 50%;
+  text-align: center;
+  color: #4d4de2;
 }
 
 table {
@@ -27,24 +28,66 @@ td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #000000;
   text-align: center;
 }
 
-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
+button:hover {
+  background-color: #4546a0; /* Цвет фона кнопки при наведении */
+  cursor: pointer;
 }
 
+button {
+  /* display: block;*/
+  margin: 20px auto;
+  color: #4d4de2;
+  background-color: #11090a; /* Цвет фона */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  padding: 0.375em 1em;
+  font-weight: 600;
+}
+#submit {
+  left: 1000px;
+  top: 100000px;
+}
+#watch {
+  left: 10px;
+  top: 10px;
+}
+#economy {
+  left: 10px;
+  top: 10px;
+}
+
+/* Новые стили для input */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  color: #4d4de2;
+  /* Цвет текста */
+  background-color: #24223f; /* Цвет фона */
+  border: 2px solid #000000; /* Цвет и стиль границы */
+  padding: 30px; /* Внутренние отступы */
+  border-radius: 5px; /* Закругленные края */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  background-color: #45a049; /* Цвет фона при фокусе */
+  border-color: #0000ff; /* Цвет границы при фокусе */
+}
 .footer {
-  position: absolute;
-  left: 0;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+  right: 30px;
+  width: 95%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border-top: 1px solid #ddd;
+  color: #4d4de2;
+  background-color: #01010e;
 }
