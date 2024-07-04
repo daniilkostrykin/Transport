@@ -18,21 +18,20 @@ button {
   margin: 20px 0; /* Отступы вокруг кнопки */
   border: none; /* Убираем границу */
   font-size: 16px; /* Размер шрифта */
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
 }
 
 table {
   border-collapse: collapse;
   margin: 100 auto;
   text-align: center;
+  border-radius: 15px; /* Закругленные края таблицы */
+  overflow: hidden; /* Обрезать содержимое, выходящее за границы */
 }
 
 th,
 td {
   border: 1px solid #ddd;
   padding: 20px;
-}
-
-#downloadExcel {
-  height: auto; /* Автоматическая высота */
-  width: auto; /* Автоматическая ширина */
 }
