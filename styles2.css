@@ -1,105 +1,38 @@
 body {
   font-family: sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #000000;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  max-width: 500px;
-  padding: 20px;
-  color: #4d4de2;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form input[type="date"],
-form input[type="number"] {
-  width: 96%;
-  padding: 10px;
-  left: 0px;
-  right: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-right: -10px;
-  background-color: #24223f; /* Цвет фона */
-  border: 2px solid #000000; /* Цвет и стиль границы */
   color: #4d4de2;
 }
 
-form button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  color: #4d4de2;
-  background-color: #3d2f5e;
-  border: none;
-  border-radius: 5px;
+button {
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #4546a0; /* Цвет фона кнопки при наведении */
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
-  margin-left: 0%;
-  cursor: pointer;
-}
-
-.buttons button {
-  color: #4d4de2;
-  background-color: #11090a;
-  border-radius: 50%;
+  background-color: #4d4de2; /* Цвет фона кнопки */
+  color: #000000; /* Цвет текста кнопки */
   border-radius: 0.5em;
   font-weight: 600;
-  flex-basis: 70%; /* Распределяем ширину кнопок */
-  margin: 0 100px; /* Добавляем отступы между кнопками */
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  right: 30px;
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-  color: #4d4de2;
-  background-color: #01010e;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  margin: 20px 0; /* Отступы вокруг кнопки */
+  border: none; /* Убираем границу */
+  font-size: 16px; /* Размер шрифта */
 }
 
 table {
   border-collapse: collapse;
-  width: 100%;
   margin: 100 auto;
-  width: 50%;
   text-align: center;
-  color: #4d4de2;
 }
 
 th,
 td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 20px;
 }
 
-th {
-  background-color: #000000;
-  text-align: center;
+#downloadExcel {
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
 }

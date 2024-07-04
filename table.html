@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Таблица поездок</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
   </head>
   <body>
-    <h1>Таблица данных о поездках</h1>
+    <button id="downloadExcel" onclick="downloadExcel()">Скачать в Excel</button>
     <table id="tripTable">
       <thead>
         <tr>
@@ -23,7 +23,6 @@
         <!-- Данные будут добавлены здесь через JavaScript -->
       </tbody>
     </table>
-    <button onclick="downloadExcel()">Скачать в Excel</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
   </body>
