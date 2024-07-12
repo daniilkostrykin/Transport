@@ -1,3 +1,6 @@
+document.body.classList.add('dark-theme');
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('date');
     if (dateInput) {
@@ -134,12 +137,14 @@ function downloadExcel() {
 if (document.querySelector('#tripTable')) {
     loadTable();
 }
-document.getElementById('themeToggle').addEventListener('click', function() {
-    const currentTheme = document.body.className;
-    if (currentTheme === 'dark-theme') {
-        document.body.className = 'light-theme';
-    } else {
-        document.body.className = 'dark-theme';
-    }
-});
 
+document.getElementById('themeToggle').addEventListener('click', function() {
+    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+    if (currentTheme === 'dark-theme') {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+    }
+    });

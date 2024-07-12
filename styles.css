@@ -1,3 +1,10 @@
+html.preload body {
+  visibility: hidden;
+}
+
+html.preload body * {
+  visibility: hidden;
+}
 body {
   font-family: sans-serif;
   min-height: 100vh;
@@ -94,28 +101,7 @@ body.light-theme {
     justify-content: space-between;
   }
 }
-/*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 body.dark-theme {
   #themeToggle {
     cursor: pointer;
@@ -133,27 +119,33 @@ body.dark-theme {
 
   form {
     display: flex;
+    justify-content: center;
+    display: flex;
     flex-direction: column;
     width: 80%;
     max-width: 500px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
+    background-color: #080808;
   }
 
   form label {
     margin-bottom: 5px;
+    text-align: center;
     font-weight: bold;
   }
 
   form input[type="date"],
   form input[type="number"] {
-    width: 96%;
+    width: 50%;
+    text-align: center;
     padding: 10px;
     border-radius: 5px;
     font-size: 16px;
     background-color: #24223f;
     border: 2px solid #000000;
+    
   }
 
   form button {
@@ -169,7 +161,7 @@ body.dark-theme {
   form button:hover {
     background-color: #4546a0;
   }
-
+  /*
   .buttons {
     display: flex;
     justify-content: space-between;
@@ -185,7 +177,18 @@ body.dark-theme {
     flex-basis: 70%;
     margin: 0 100px;
   }
-
+*/
+  .buttons {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0.5em;
+    font-weight: 600;
+  }
+  .buttons button {
+    background-color: #733fd3;
+  }
+  #watch {
+  }
   .footer {
     position: fixed;
     bottom: 0;
