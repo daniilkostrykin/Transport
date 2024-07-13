@@ -18,184 +18,225 @@ body {
 }
 
 body.light-theme {
-  background-color: rgba(38, 38, 247, 0.63);
-  color: yellow;
-  #themeToggle {
-    cursor: pointer;
-    background-color: rgba(42, 42, 211, 0.712); /* Цвет фона кнопки */
-    color: yellow; /* Цвет текста кнопки */
-    border-radius: 0.5em;
-    font-weight: 600;
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    margin: 20px 0; /* Отступы вокруг кнопки */
-    border: none; /* Убираем границу */
-    font-size: 16px; /* Размер шрифта */
-    height: auto; /* Автоматическая высота */
-    width: auto; /* Автоматическая ширина */
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-
-  form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  form input[type="date"],
-  form input[type="number"] {
-    width: 96%;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: rgba(38, 38, 247, 0.233);
-    border: 2px solid #0000004d;
-  }
-
-  form button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: rgba(38, 38, 247, 0.63);
-    color: yellow;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  form button:hover {
-    background-color: #4546a0;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .buttons button {
-    background-color: rgba(38, 38, 247, 0.63);
-    color: yellow;
-    border-radius: 0.5em;
-    font-weight: 600;
-    flex-basis: 70%;
-    margin: 0 100px;
-    border: none;
-    width: auto;
-    height: auto;
-  }
-
-  .footer {
-    position: fixed;
-    bottom: 0;
-    right: 30px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-  }
+  background-color: rgba(38, 38, 247, 0.205);
+  color: rgba(50, 59, 55, 0.966);
 }
 
-body.dark-theme {
-  #themeToggle {
-    cursor: pointer;
-    background-color: #4d4de2; /* Цвет фона кнопки */
-    color: #000000; /* Цвет текста кнопки */
-    border-radius: 0.5em;
-    font-weight: 600;
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    margin: 20px 0; /* Отступы вокруг кнопки */
-    border: none; /* Убираем границу */
-    font-size: 16px; /* Размер шрифта */
-    height: auto; /* Автоматическая высота */
-    width: auto; /* Автоматическая ширина */
-  }
+body.light-theme #themeToggle {
+  cursor: pointer;
+  background-color: rgba(42, 42, 211, 0.712); /* Цвет фона кнопки */
+  color: yellow; /* Цвет текста кнопки */
+  border-radius: 0.5em;
+  font-weight: 600;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  margin: 20px 0; /* Отступы вокруг кнопки */
+  border: none; /* Убираем границу */
+  font-size: 16px; /* Размер шрифта */
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
+}
 
-  form {
-    display: flex;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
-    background-color: #080808;
-  }
+body.light-theme form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(38, 38, 247, 0.233);
+}
 
-  form label {
-    margin-bottom: 5px;
-    text-align: center;
-    font-weight: bold;
-  }
+body.light-theme form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
-  form input[type="date"],
-  form input[type="number"] {
-    width: 50%;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #24223f;
-    border: 2px solid #000000;
-    
-  }
+body.light-theme form input[type="date"],
+body.light-theme form input[type="number"] {
+  width: 35%;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(38, 38, 247, 0.233);
+  border: 2px solid #0000004d;
+}
 
-  form button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #733fd3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+body.light-theme form button,
+body.light-theme .buttons button {
+  padding: 10px 20px;
+  background-color: rgba(38, 38, 247, 0.63);
+  color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  width: 100%; /* Ensure all buttons have the same width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
 
-  form button:hover {
-    background-color: #4546a0;
-  }
-  /*
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+body.light-theme form button:hover,
+body.light-theme .buttons button:hover {
+  background-color: #4546a0;
+}
 
-    margin-top: 20px;
-  }
+body.light-theme .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 500px;
+  margin-top: 20px;
+}
 
-  .buttons button {
-    background-color: #733fd3;
-    border-radius: 0.5em;
-    font-weight: 600;
-    flex-basis: 70%;
-    margin: 0 100px;
-  }
-*/
-  .buttons {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 0.5em;
-    font-weight: 600;
-  }
-  .buttons button {
-    background-color: #733fd3;
-  }
-  #watch {
-  }
-  .footer {
-    position: fixed;
-    bottom: 0;
-    right: 30px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #01010e;
-  }
+body.dark-theme #themeToggle {
+  cursor: pointer;
+  background-color: #4d4de2; /* Цвет фона кнопки */
+  color: #000000; /* Цвет текста кнопки */
+  border-radius: 0.5em;
+  font-weight: 600;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  margin: 20px 0; /* Отступы вокруг кнопки */
+  border: none; /* Убираем границу */
+  font-size: 16px; /* Размер шрифта */
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
+}
+
+body.dark-theme form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
+  background-color: #080808;
+}
+
+body.dark-theme form label {
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+body.dark-theme form input[type="date"],
+body.dark-theme form input[type="number"] {
+  width: 35%;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #24223f;
+  border: 2px solid #000000;
+  color: rgb(26, 91, 148);
+}
+
+body.dark-theme form button,
+body.dark-theme .buttons button {
+  padding: 10px 20px;
+  background-color: #733fd3;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  width: 100%;  /* Ensure all buttons have the same width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+body.dark-theme form button:hover,
+body.dark-theme .buttons button:hover {
+  background-color: #4546a0;
+}
+body.dark-theme .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+body.dark-theme .buttons button {
+  padding: 10px 20px;
+  background-color: #733fd3;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  flex-basis: 48%;
+}
+
+body.dark-theme .buttons button:hover {
+  background-color: #4546a0;
+}
+body.light-theme .footer {
+  position: fixed;
+  bottom: 0;
+  width: 27%;
+  margin-left: -6px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(38, 38, 247, 0.233);
+  color: rgba(50, 59, 55, 0.966);
+}
+body.dark-theme .footer {
+  position: fixed;
+  bottom: 0;
+  width: 27%;
+  margin-left: -6px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #01010e;
+  color: #4d4de2;
+}
+#economy {
+  margin-left: 140px;
+}
+#watch {
+  margin-right: 70px;
+}
+body.dark-theme #submit {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #733fd3;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  flex-basis: 48%;
+  max-width: 500px;
+  margin-top: 20px;
+  height: 100px;
+}
+body.dark-theme #submit:hover {
+  background-color: #4546a0;
+}
+
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 0.5em;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  height: auto;
+  width: auto;
+  z-index: 10;
 }

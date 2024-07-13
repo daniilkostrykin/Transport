@@ -137,7 +137,7 @@ function downloadExcel() {
 if (document.querySelector('#tripTable')) {
     loadTable();
 }
-
+/*
 document.getElementById('themeToggle').addEventListener('click', function() {
     const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
     if (currentTheme === 'dark-theme') {
@@ -147,4 +147,26 @@ document.getElementById('themeToggle').addEventListener('click', function() {
         document.body.classList.remove('light-theme');
         document.body.classList.add('dark-theme');
     }
-    });
+    });*/
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById("themeToggle");
+      
+        themeToggle.addEventListener("click", function() {
+          document.body.classList.toggle("light-theme");
+          document.body.classList.toggle("dark-theme");
+      
+          if (document.body.classList.contains("light-theme")) {
+            themeToggle.textContent = "Dark";
+          } else {
+            themeToggle.textContent = "Light";
+          }
+        });
+      
+        // Установите начальный текст кнопки в зависимости от начальной темы
+        if (document.body.classList.contains("light-theme")) {
+          themeToggle.textContent = "Dark";
+        } else {
+          themeToggle.textContent = "Light";
+        }
+      });
+      
