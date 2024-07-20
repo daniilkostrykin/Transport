@@ -63,8 +63,24 @@ function submitForm() {
 
     localStorage.setItem('trips', JSON.stringify(trips));
     updateTotalTrips();
-    window.location.href = 'table.html';
+
+    // Очистка формы
+    document.getElementById('date').value = '';
+    document.getElementById('groundTransport').value = '';
+    document.getElementById('trains').value = '';
+    document.getElementById('additionalMetro').value = '';
+    document.getElementById('additionalTrains').value = '';
+
+    // Показать сообщение об успешной отправке
+// ... (код функции submitForm) ...
+
+// Показать сообщение об успешной отправке
+document.getElementById('success-message').style.display = 'block';
+setTimeout(() => {
+    document.getElementById('success-message').style.display = 'none';
+}, 2000); // Скрыть сообщение через 3 секунды
 }
+
 
 function calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains) {
     const groundTransportCost = groundTransport * 57; // Коэффициент для наземного транспорта

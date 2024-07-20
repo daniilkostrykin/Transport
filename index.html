@@ -21,7 +21,6 @@
           id="groundTransport"
           name="groundTransport"
           min="0"
-          value="0"
         /><br />
         <label for="trains">Электрички:</label>
         <input
@@ -29,7 +28,6 @@
           id="trains"
           name="trains"
           min="0"
-          value="0"
         /><br />
         <label for="additionalMetro">Доп. поездки на метро:</label>
         <input
@@ -37,7 +35,6 @@
           id="additionalMetro"
           name="additionalMetro"
           min="0"
-          value="0"
         /><br />
         <label for="additionalTrains">Доп. поездки на электричке:</label>
         <input
@@ -45,12 +42,13 @@
           id="additionalTrains"
           name="additionalTrains"
           min="0"
-          value="0"
         /><br />
         <button id="submit" type="button" onclick="submitForm()">
           Отправить
         </button>
+        <div id="success-message" style="display: none;">Данные отправлены!</div>
       </form>
+
       <div class="buttons">
         <button id="watch" onclick="window.location.href='table.html'">
           Посмотреть таблицу
