@@ -7,7 +7,7 @@ html.preload body * {
 }
 body {
   font-family: sans-serif;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@ body.dark-theme form {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
-  background-color: #16151583;
+  background-color: #df080800;
   margin: 30px auto; /* Изменение: margin: 30px auto; */
 }
 body.light-theme {
@@ -124,6 +124,15 @@ body.light-theme .buttons button:hover {
 body.light-theme .buttons {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
+  width: 80%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+body.dark-theme .buttons {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
   width: 80%;
   max-width: 500px;
   margin-top: 20px;
@@ -152,7 +161,7 @@ body.dark-theme form label {
 body.dark-theme form button,
 body.dark-theme .buttons button {
   padding: 10px 20px;
-  background-color: #733fd3;
+  background-color: #4d4de2;
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -167,17 +176,10 @@ body.dark-theme form button:hover,
 body.dark-theme .buttons button:hover {
   background-color: #4546a0;
 }
-body.dark-theme .buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  max-width: 500px;
-  margin-top: 20px;
-}
 
 body.dark-theme .buttons button {
   padding: 10px 20px;
-  background-color: #733fd3;
+  background-color: #4d4de2;
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -193,30 +195,38 @@ body.dark-theme .buttons button:hover {
 body.light-theme .footer {
   position: fixed;
   bottom: 0;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   background-color: rgba(38, 38, 247, 0.233);
   color: rgba(50, 59, 55, 0.966);
-  height: 30px;
+  height: 10px;
+  left: 0;
 }
 body.dark-theme .footer {
   position: fixed;
   bottom: 0;
   width: 90%;
   padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   background-color: #01010e;
   color: #4d4de2;
-  height: 30px;
+  
+  left: 0;
+  height: 10px;
 }
 #economy {
-  margin-left: 140px;
+  margin-left: 73px;
 }
 #watch {
-  margin-right: 70px;
+  margin-left: 78px;
 }
 body.dark-theme #submit {
   position: relative;
@@ -228,7 +238,7 @@ body.dark-theme #submit {
   cursor: pointer;
   transition: background-color 0.3s;
   font-weight: 600;
-  flex-basis: 48%;
+  flex-basis: 40%;
   max-width: 500px;
   margin-top: 20px;
   height: 100px;
