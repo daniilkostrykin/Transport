@@ -35,19 +35,6 @@ body.light-theme {
   color: rgba(50, 59, 55, 0.966);
 }
 
-body.light-theme #themeToggle {
-  cursor: pointer;
-  background-color: rgba(42, 42, 211, 0.712); /* Цвет фона кнопки */
-  color: yellow; /* Цвет текста кнопки */
-  border-radius: 0.5em;
-  font-weight: 600;
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  margin: 20px 0; /* Отступы вокруг кнопки */
-  border: none; /* Убираем границу */
-  font-size: 16px; /* Размер шрифта */
-  height: auto; /* Автоматическая высота */
-  width: auto; /* Автоматическая ширина */
-}
 
 body.light-theme form {
   display: flex;
@@ -137,11 +124,13 @@ body.dark-theme .buttons {
   max-width: 500px;
   margin-top: 20px;
 }
-
-body.dark-theme #themeToggle {
+body.light-theme #themeToggle {
+  position: relative;
+  left: 86%;
+  top: -50px;
   cursor: pointer;
-  background-color: #4d4de2; /* Цвет фона кнопки */
-  color: #000000; /* Цвет текста кнопки */
+  background-color: rgba(172, 172, 211, 0.712); /* Цвет фона кнопки */
+  color: yellow; /* Цвет текста кнопки */
   border-radius: 0.5em;
   font-weight: 600;
   padding: 10px 20px; /* Отступы внутри кнопки */
@@ -150,6 +139,23 @@ body.dark-theme #themeToggle {
   font-size: 16px; /* Размер шрифта */
   height: auto; /* Автоматическая высота */
   width: auto; /* Автоматическая ширина */
+}
+body.dark-theme #themeToggle {
+  position: relative;
+  left: 86%;
+  top: -50px;
+  cursor: pointer;
+  background-color: #000000; /* Цвет фона кнопки */
+  color: #3a339b; /* Цвет текста кнопки */
+  border-radius: 0.5em;
+  font-weight: 600;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  margin: 20px 0; /* Отступы вокруг кнопки */
+  border: none; /* Убираем границу */
+  font-size: 16px; /* Размер шрифта */
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
+  
 }
 
 body.dark-theme form label {
@@ -245,18 +251,4 @@ body.dark-theme #submit {
 }
 body.dark-theme #submit:hover {
   background-color: #4546a0;
-}
-
-#themeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  border-radius: 0.5em;
-  font-weight: 600;
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  height: auto;
-  width: auto;
-  z-index: 10;
 }

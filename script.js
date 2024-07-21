@@ -1,6 +1,5 @@
 document.body.classList.add('dark-theme');
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('date');
     if (dateInput) {
@@ -34,20 +33,20 @@ function updateTotalTrips() {
 
 function submitForm() {
     const date = document.getElementById('date').value;
-    const groundTransport = document.getElementById('groundTransport').value;
-    const trains = document.getElementById('trains').value;
-    const additionalMetro = document.getElementById('additionalMetro').value;
-    const additionalTrains = document.getElementById('additionalTrains').value;
+    const groundTransport = parseInt(document.getElementById('groundTransport').value) || 0;
+    const trains = parseInt(document.getElementById('trains').value) || 0;
+    const additionalMetro = parseInt(document.getElementById('additionalMetro').value) || 0;
+    const additionalTrains = parseInt(document.getElementById('additionalTrains').value) || 0;
 
-    const total = parseInt(groundTransport) + parseInt(trains) + parseInt(additionalMetro) + parseInt(additionalTrains);
+    const total = groundTransport + trains + additionalMetro + additionalTrains;
     const tripCost = calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains);
 
     const tripData = {
         date: date,
-        groundTransport: parseInt(groundTransport),
-        trains: parseInt(trains),
-        additionalMetro: parseInt(additionalMetro),
-        additionalTrains: parseInt(additionalTrains),
+        groundTransport: groundTransport,
+        trains: trains,
+        additionalMetro: additionalMetro,
+        additionalTrains: additionalTrains,
         total: total,
         tripCost: tripCost.toFixed(2)
     };
@@ -64,23 +63,18 @@ function submitForm() {
     localStorage.setItem('trips', JSON.stringify(trips));
     updateTotalTrips();
 
-    // Очистка формы
-    document.getElementById('date').value = '';
+    // Очистка формы, кроме поля даты
     document.getElementById('groundTransport').value = '';
     document.getElementById('trains').value = '';
     document.getElementById('additionalMetro').value = '';
     document.getElementById('additionalTrains').value = '';
 
     // Показать сообщение об успешной отправке
-// ... (код функции submitForm) ...
-
-// Показать сообщение об успешной отправке
-document.getElementById('success-message').style.display = 'block';
-setTimeout(() => {
-    document.getElementById('success-message').style.display = 'none';
-}, 2000); // Скрыть сообщение через 3 секунды
+    document.getElementById('success-message').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('success-message').style.display = 'none';
+    }, 2000); // Скрыть сообщение через 2 секунды
 }
-
 
 function calculateTripCost(groundTransport, trains, additionalMetro, additionalTrains) {
     const groundTransportCost = groundTransport * 57; // Коэффициент для наземного транспорта
@@ -153,36 +147,25 @@ function downloadExcel() {
 if (document.querySelector('#tripTable')) {
     loadTable();
 }
-/*
-document.getElementById('themeToggle').addEventListener('click', function() {
-    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
-    if (currentTheme === 'dark-theme') {
-        document.body.classList.remove('dark-theme');
-        document.body.classList.add('light-theme');
-    } else {
-        document.body.classList.remove('light-theme');
-        document.body.classList.add('dark-theme');
-    }
-    });*/
-    document.addEventListener("DOMContentLoaded", function() {
-        const themeToggle = document.getElementById("themeToggle");
-      
-        themeToggle.addEventListener("click", function() {
-          document.body.classList.toggle("light-theme");
-          document.body.classList.toggle("dark-theme");
-      
-          if (document.body.classList.contains("light-theme")) {
-            themeToggle.textContent = "Dark";
-          } else {
-            themeToggle.textContent = "Light";
-          }
-        });
-      
-        // Установите начальный текст кнопки в зависимости от начальной темы
+
+document.addEventListener("DOMContentLoaded", function() {
+    const themeToggle = document.getElementById("themeToggle");
+  
+    themeToggle.addEventListener("click", function() {
+        document.body.classList.toggle("light-theme");
+        document.body.classList.toggle("dark-theme");
+  
         if (document.body.classList.contains("light-theme")) {
-          themeToggle.textContent = "Dark";
+            themeToggle.textContent = "D";
         } else {
-          themeToggle.textContent = "Light";
+            themeToggle.textContent = "L";
         }
-      });
-      
+    });
+  
+    // Установите начальный текст кнопки в зависимости от начальной темы
+    if (document.body.classList.contains("light-theme")) {
+        themeToggle.textContent = "D";
+    } else {
+        themeToggle.textContent = "L";
+    }
+});
