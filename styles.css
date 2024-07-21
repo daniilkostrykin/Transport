@@ -28,7 +28,7 @@ body.dark-theme form {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
   background-color: #df080800;
-  margin: 30px auto; /* Изменение: margin: 30px auto; */
+  margin: 20px auto; /* Изменение: margin: 20px auto; */
 }
 body.light-theme {
   background-color: rgba(38, 38, 247, 0.205);
@@ -45,18 +45,18 @@ body.light-theme form {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(38, 38, 247, 0.233);
-  margin: 30px auto; /* Изменение: margin: 30px auto; */
+  margin: 20px auto; /* Изменение: margin: 20px auto; */
 }
 
 @media screen and (max-width: 425px) {
   /* Медиа-запрос для экранов шириной 425 пикселей или меньше */
   body.light-theme form {
-    width: 80%; /* Занимаем 90% ширины экрана */
-    margin: 20px auto; /* Автоматические отступы по горизонтали */
+      width: 80%; /* Занимаем 80% ширины экрана */
+      margin: 20px auto; /* Автоматические отступы по горизонтали */
   }
   body.dark-theme form {
-    width: 80%; /* Занимаем 90% ширины экрана */
-    margin: 20px auto; /* Автоматические отступы по горизонтали */
+      width: 80%; /* Занимаем 80% ширины экрана */
+      margin: 20px auto; /* Автоматические отступы по горизонтали */
   }
 }
 
@@ -126,7 +126,7 @@ body.dark-theme .buttons {
 body.light-theme #themeToggle {
   position: relative;
   left: 86%;
-  top: -50px;
+  top: 51px; /* Изменено с -50px на -30px */
   cursor: pointer;
   background-color: rgba(172, 172, 211, 0.712); /* Цвет фона кнопки */
   color: yellow; /* Цвет текста кнопки */
@@ -142,7 +142,7 @@ body.light-theme #themeToggle {
 body.dark-theme #themeToggle {
   position: relative;
   left: 86%;
-  top: -50px;
+  top: 51px; /* Изменено с -50px на -30px */
   cursor: pointer;
   background-color: #000000; /* Цвет фона кнопки */
   color: #3a339b; /* Цвет текста кнопки */
