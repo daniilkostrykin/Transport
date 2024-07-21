@@ -6,6 +6,7 @@ body {
   justify-content: center;
   background-color: #000000;
   color: #4d4de2;
+  font-size: 16px; /* Базовый размер шрифта */
 }
 
 button {

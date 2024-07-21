@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCurrentTime, 1000);
 
     updateTotalTrips();
+
+    // Load the table with today's date at the top
+    loadTable();
+    scrollToToday();
 });
 
 function updateCurrentTime() {
@@ -119,11 +123,22 @@ function loadTable() {
     }
     const trips = JSON.parse(localStorage.getItem('trips')) || [];
 
+    // Sort trips so today's date is at the top
+    const today = new Date().toISOString().split('T')[0];
+    trips.sort((a, b) => {
+        if (a.date === today) return -1;
+        if (b.date === today) return 1;
+        return new Date(b.date) - new Date(a.date);
+    });
+
     const tableBody = document.querySelector('#tripTable tbody');
     tableBody.innerHTML = '';
 
     trips.forEach(trip => {
         const row = document.createElement('tr');
+        if (trip.date === today) {
+            row.id = 'today'; // Присваиваем идентификатор строке с текущей датой
+        }
         
         for (const value of Object.values(trip)) {
             const cell = document.createElement('td');
@@ -135,6 +150,13 @@ function loadTable() {
     });
 }
 
+function scrollToToday() {
+    const todayRow = document.getElementById('today');
+    if (todayRow) {
+        todayRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 function downloadExcel() {
     const trips = JSON.parse(localStorage.getItem('trips')) || [];
     const worksheet = XLSX.utils.json_to_sheet(trips);
@@ -142,10 +164,6 @@ function downloadExcel() {
 
     XLSX.utils.book_append_sheet(workbook, worksheet, "Trips");
     XLSX.writeFile(workbook, "trips.xlsx");
-}
-
-if (document.querySelector('#tripTable')) {
-    loadTable();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
