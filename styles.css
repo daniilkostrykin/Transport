@@ -7,7 +7,7 @@ html.preload body * {
 }
 body {
   font-family: sans-serif;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,6 @@ body.light-theme {
   background-color: rgba(38, 38, 247, 0.205);
   color: rgba(50, 59, 55, 0.966);
 }
-
 
 body.light-theme form {
   display: flex;
@@ -155,7 +154,6 @@ body.dark-theme #themeToggle {
   font-size: 16px; /* Размер шрифта */
   height: auto; /* Автоматическая высота */
   width: auto; /* Автоматическая ширина */
-  
 }
 
 body.dark-theme form label {
@@ -224,7 +222,7 @@ body.dark-theme .footer {
   justify-content: space-between;
   background-color: #01010e;
   color: #4d4de2;
-  
+
   left: 0;
   height: 10px;
 }
@@ -234,10 +232,30 @@ body.dark-theme .footer {
 #watch {
   margin-left: 78px;
 }
+body.light-theme #submit {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #4d4de2;
+  width: 92%;
+  color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  flex-basis: 40%;
+  max-width: 500px;
+  margin-top: 20px;
+  height: 100px;
+}
+body.light-theme #submit::hover {
+  background-color: #4546a0;
+}
 body.dark-theme #submit {
   position: relative;
   padding: 10px 20px;
-  background-color: #733fd3;
+  background-color: #4d4de2;
+  width: 92%;
   color: #000000;
   border: none;
   border-radius: 5px;
