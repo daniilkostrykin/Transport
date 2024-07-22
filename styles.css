@@ -126,7 +126,7 @@ body.dark-theme .buttons {
 body.light-theme #themeToggle {
   position: relative;
   left: 86%;
-  top: 51px; /* Изменено с -50px на -30px */
+  top: -7px; /* Изменено с -50px на -30px */
   cursor: pointer;
   background-color: rgba(172, 172, 211, 0.712); /* Цвет фона кнопки */
   color: yellow; /* Цвет текста кнопки */
@@ -142,7 +142,7 @@ body.light-theme #themeToggle {
 body.dark-theme #themeToggle {
   position: relative;
   left: 86%;
-  top: 51px; /* Изменено с -50px на -30px */
+  top: -7px; /* Изменено с -50px на -30px */
   cursor: pointer;
   background-color: #000000; /* Цвет фона кнопки */
   color: #3a339b; /* Цвет текста кнопки */
