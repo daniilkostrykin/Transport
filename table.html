@@ -7,6 +7,7 @@
   </head>
   <body>
     <button id="downloadExcel" onclick="downloadExcel()">Скачать в Excel</button>
+    <div class="table-container">
     <table id="tripTable">
       <thead>
         <tr>
@@ -20,9 +21,15 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Данные будут добавлены здесь через JavaScript -->
-      </tbody>
-    </table>
+<td data-label="Дата">01.01.2024</td>
+      <td data-label="Наземный транспорт">5</td>
+      <td data-label="Электрички">2</td>
+      <td data-label="Доп. поездки на метро">1</td>
+      <td data-label="Доп. поездки на электричке">1</td>
+      <td data-label="Итого">9</td>
+      <td data-label="Стоимость поездок за день">500</td>
+    </tr>      </tbody>
+    </table></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
   </body>
