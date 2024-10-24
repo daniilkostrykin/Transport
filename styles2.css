@@ -35,34 +35,35 @@ td, th {
   border: 1px solid #ddd;
 }
 
-/* Адаптация для мобильных экранов */
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
+  table {
+    display: none; /* Скрываем стандартную таблицу */
   }
 
-  thead tr {
-    display: none; /* Скрываем заголовок */
+  .table-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Сетка с авто-заполнением */
+    gap: 10px; /* Расстояние между карточками */
   }
 
-  tr {
-    margin-bottom: 10px;
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 8px;
   }
 
-  td {
+  .card div {
     display: flex;
     justify-content: space-between;
-    padding-left: 50%;
-    text-align: right;
-    position: relative;
-    padding: 8px;
+    padding: 5px 0;
   }
 
-  td:before {
-    content: attr(data-label); /* Используем data-label для отображения названий полей */
-    position: absolute;
-    left: 10px;
-    white-space: nowrap;
+  .card div span:first-child {
     font-weight: bold;
   }
 }
+
