@@ -93,7 +93,12 @@ function calculateSavings() {
     const totalCost = trips.reduce((total, trip) => total + parseFloat(trip.tripCost), 0);
     const passCost = 2123; // Цена проездного, заданная разработчиком
    const savings = totalCost - passCost;
-   return savings;
+   
+    // Используем alert для передачи данных
+    alert("Сэкономлено: " + savings + " рублей");
+
+    // Можно использовать console.log для отладки
+    console.log("Сэкономлено: " + savings + " рублей");
 }
 
 function generateDates() {
