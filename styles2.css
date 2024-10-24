@@ -66,4 +66,14 @@ td, th {
     font-weight: bold;
   }
 }
+/* Для экранов шире 768px, возвращаем таблицу */
+@media (min-width: 769px) {
+  .table-container {
+    display: none; /* Скрываем карточки */
+  }
+
+  table {
+    display: table;
+  }
+}
 
