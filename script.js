@@ -127,8 +127,8 @@ function loadTable() {
         generateDates();
     }
     const trips = JSON.parse(localStorage.getItem('trips')) || [];
-
-    // Sort trips so today's date is at the top
+    
+    // Сортировка поездок так, чтобы текущая дата была на первом месте
     const today = new Date().toISOString().split('T')[0];
     trips.sort((a, b) => {
         if (a.date === today) return -1;
@@ -139,21 +139,45 @@ function loadTable() {
     const tableBody = document.querySelector('#tripTable tbody');
     tableBody.innerHTML = '';
 
+    // Обновляем таблицу
     trips.forEach(trip => {
         const row = document.createElement('tr');
         if (trip.date === today) {
             row.id = 'today'; // Присваиваем идентификатор строке с текущей датой
         }
-        
+
         for (const value of Object.values(trip)) {
             const cell = document.createElement('td');
             cell.textContent = value;
             row.appendChild(cell);
         }
-        
+
         tableBody.appendChild(row);
     });
+
+    // Генерация карточек для мобильных устройств
+    const tableContainer = document.querySelector('.table-container');
+    if (window.innerWidth <= 768) {
+        const cardContainer = document.createElement('div');
+        cardContainer.className = 'card-container';
+        trips.forEach(trip => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div><span>Дата:</span> ${trip.date}</div>
+                <div><span>Наземный транспорт:</span> ${trip.groundTransport}</div>
+                <div><span>Электрички:</span> ${trip.trains}</div>
+                <div><span>Доп. поездки на метро:</span> ${trip.additionalMetro}</div>
+                <div><span>Доп. поездки на электричке:</span> ${trip.additionalTrains}</div>
+                <div><span>Итого:</span> ${trip.total}</div>
+                <div><span>Стоимость поездок за день:</span> ${trip.tripCost}</div>
+            `;
+            cardContainer.appendChild(card);
+        });
+        tableContainer.appendChild(cardContainer);
+    }
 }
+
 
 function scrollToToday() {
     const todayRow = document.getElementById('today');
