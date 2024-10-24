@@ -1,4 +1,4 @@
-/*В приложении норм, на сайте нет*/
+/*В приложении норм, на сайте нет /Попытка 1*/
 document.body.classList.add('dark-theme');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,13 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCurrentTime();
     setInterval(updateCurrentTime, 1000);
-
     updateTotalTrips();
-
-    // Load the table with today's date at the top
     loadTable();
     scrollToToday();
+
+    const themeToggle = document.getElementById("themeToggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function() {
+            document.body.classList.toggle("light-theme");
+            document.body.classList.toggle("dark-theme");
+
+            if (document.body.classList.contains("light-theme")) {
+                themeToggle.textContent = "D";
+            } else {
+                themeToggle.textContent = "L";
+            }
+        });
+        
+        // Установите начальный текст кнопки в зависимости от начальной темы
+        if (document.body.classList.contains("light-theme")) {
+            themeToggle.textContent = "D";
+        } else {
+            themeToggle.textContent = "L";
+        }
+    } else {
+        console.warn("Element with ID 'themeToggle' not found.");
+    }
 });
+
+// Остальные функции вашего скрипта остаются без изменений
 
 function updateCurrentTime() {
     const currentTimeElement = document.getElementById('currentTime');
@@ -196,24 +218,3 @@ function downloadExcel() {
     XLSX.writeFile(workbook, "trips.xlsx");
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const themeToggle = document.getElementById("themeToggle");
-  
-    themeToggle.addEventListener("click", function() {
-        document.body.classList.toggle("light-theme");
-        document.body.classList.toggle("dark-theme");
-  
-        if (document.body.classList.contains("light-theme")) {
-            themeToggle.textContent = "D";
-        } else {
-            themeToggle.textContent = "L";
-        }
-    });
-  
-    // Установите начальный текст кнопки в зависимости от начальной темы
-    if (document.body.classList.contains("light-theme")) {
-        themeToggle.textContent = "D";
-    } else {
-        themeToggle.textContent = "L";
-    }
-});
