@@ -23,16 +23,46 @@ button {
   width: auto; /* Автоматическая ширина */
 }
 
+/* Основной стиль для больших экранов */
 table {
+  width: 100%;
   border-collapse: collapse;
-  margin: 100 auto;
-  text-align: center;
-  border-radius: 15px; /* Закругленные края таблицы */
-  overflow: hidden; /* Обрезать содержимое, выходящее за границы */
 }
 
-th,
-td {
+td, th {
+  padding: 8px;
+  text-align: center;
   border: 1px solid #ddd;
-  padding: 20px;
+}
+
+/* Адаптация для мобильных экранов */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none; /* Скрываем заголовок */
+  }
+
+  tr {
+    margin-bottom: 10px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50%;
+    text-align: right;
+    position: relative;
+    padding: 8px;
+  }
+
+  td:before {
+    content: attr(data-label); /* Используем data-label для отображения названий полей */
+    position: absolute;
+    left: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
 }
