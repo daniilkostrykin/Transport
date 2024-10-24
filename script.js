@@ -1,3 +1,4 @@
+/*В приложении норм, на сайте нет*/
 document.body.classList.add('dark-theme');
 
 document.addEventListener('DOMContentLoaded', () => {
