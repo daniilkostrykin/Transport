@@ -32,7 +32,7 @@ table {
 td, th {
   padding: 8px;
   text-align: center;
-  border: 1px solid #0beb0b;
+  border: 1px solid #092e04;
 }
 
 /* Адаптация для мобильных устройств */
@@ -51,7 +51,7 @@ td, th {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border: 1px solid #1a8f0b;
+    border: 1px solid #092e04;
     background-color: #1f1818c0;
     border-radius: 15px;
     margin-bottom: 30px; /* Добавляем отступ между карточками */
@@ -68,13 +68,13 @@ td, th {
     font-weight: bold;
   }
 }
-/* Для экранов шире 768px, возвращаем таблицу */
+/* Для экранов шире 768px, возвращаем таблицу 
 @media (min-width: 769px) {
   .table-container {
-    display: none; /* Скрываем карточки */
+    display: none; /* Скрываем карточки 
   }
 
   table {
     display: table;
   }
-}
+}*/
