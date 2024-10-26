@@ -10,8 +10,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
- /* align-items: center;
-  justify-content: center;*/
+  align-items: center;
+  justify-content: center;
 }
 body.dark-theme {
   background-color: #000000;
@@ -29,6 +29,7 @@ body.dark-theme form {
   box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
   background-color: #df080800;
   margin: 20px auto; /* Изменение: margin: 20px auto; */
+  margin-top: -100px;
 }
 body.light-theme {
   background-color: rgba(38, 38, 247, 0.205);
@@ -46,6 +47,7 @@ body.light-theme form {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(38, 38, 247, 0.233);
   margin: 20px auto; /* Изменение: margin: 20px auto; */
+  margin-top: -100px;
 }
 
 @media screen and (max-width: 425px) {
@@ -138,6 +140,8 @@ body.light-theme #themeToggle {
   font-size: 16px; /* Размер шрифта */
   height: auto; /* Автоматическая высота */
   width: auto; /* Автоматическая ширина */
+  z-index: 1;  /* Устанавливаем z-индекс кнопки выше, чем у формы */
+
 }
 body.dark-theme #themeToggle {
   position: relative;
@@ -154,6 +158,8 @@ body.dark-theme #themeToggle {
   font-size: 16px; /* Размер шрифта */
   height: auto; /* Автоматическая высота */
   width: auto; /* Автоматическая ширина */
+  z-index: 1;  /* Устанавливаем z-индекс кнопки выше, чем у формы */
+
 }
 
 body.dark-theme form label {
