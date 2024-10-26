@@ -4,8 +4,8 @@ document.body.classList.add("dark-theme");
 document.addEventListener("DOMContentLoaded", () => {
   const dateInput = document.getElementById("date");
   if (dateInput) {
-    const today = new Date().toLocaleDateString("en-CA"); // Формат YYYY-MM-DD
-    dateInput.value = today;
+    const today = new Date().toISOString().slice(0, 10);
+        dateInput.value = today;
   }
 
   updateCurrentTime();
@@ -132,7 +132,7 @@ function generateDates() {
 
   while (startDate <= endDate) {
     dates.push({
-      date: startDate.toLocaleDateString("en-CA"), // Формат YYYY-MM-DD
+      date: startDate.toISOString().slice(0, 10), // Формат YYYY-MM-DD
       groundTransport: 0,
       trains: 0,
       additionalMetro: 0,
