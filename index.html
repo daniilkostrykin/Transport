@@ -10,7 +10,7 @@
   <body>
     <div class="all">
       <button id="themeToggle">D</button>
-      
+
       <form id="tripForm">
         <label for="date">Дата:</label>
         <input type="date" id="date" name="date" value="" />
@@ -23,12 +23,7 @@
           min="0"
         /><br />
         <label for="trains">Электрички:</label>
-        <input
-          type="number"
-          id="trains"
-          name="trains"
-          min="0"
-        /><br />
+        <input type="number" id="trains" name="trains" min="0" /><br />
         <label for="additionalMetro">Доп. поездки на метро:</label>
         <input
           type="number"
@@ -46,15 +41,21 @@
         <button id="submit" type="button" onclick="submitForm()">
           Отправить
         </button>
-        <div id="success-message" style="display: none;">Данные отправлены!</div>
+        <div id="success-message" style="display: none">Данные отправлены!</div>
+        <div class="buttons">
+          <button
+            id="watch"
+            type="button"
+            onclick="window.location.href='table.html'"
+          >
+            Посмотреть таблицу
+          </button>
+          <button id="economy" type="button" onclick="calculateSavings()">
+            Экономия
+          </button>
+        </div>
       </form>
 
-      <div class="buttons">
-        <button id="watch" onclick="window.location.href='table.html'">
-          Посмотреть таблицу
-        </button>
-        <button id="economy" onclick="calculateSavings()">Экономия</button>
-      </div>
       <div class="footer">
         <div id="totalTrips">Всего поездок: 0</div>
         <div id="currentTime"></div>

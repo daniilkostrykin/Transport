@@ -202,6 +202,11 @@ body.dark-theme .buttons button:hover {
   left: 0;
   height: 10px;
 }
+body.light-theme .buttons,
+body.dark-theme .buttons {
+  /* ...другие  стили */
+  margin-left: -76px; /*  Например, 50px от левого  края */
+}
 body.light-theme .footer {
   background-color: rgba(38, 38, 247, 0.233);
   color: rgba(50, 59, 55, 0.966);
