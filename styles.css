@@ -28,8 +28,7 @@ body.dark-theme form {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(187, 17, 17, 0.2);
   background-color: #df080800;
-  margin: 20px auto; /* Изменение: margin: 20px auto; */
-  margin-top: -100px;
+  margin: 50px auto; /* Изменение: margin: 20px auto; */
 }
 body.light-theme {
   background-color: rgba(38, 38, 247, 0.205);
@@ -46,19 +45,18 @@ body.light-theme form {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(38, 38, 247, 0.233);
-  margin: 20px auto; /* Изменение: margin: 20px auto; */
-  margin-top: -100px;
+  margin: 50px auto; /* Изменение: margin: 20px auto; */
 }
 
 @media screen and (max-width: 425px) {
   /* Медиа-запрос для экранов шириной 425 пикселей или меньше */
   body.light-theme form {
-      width: 80%; /* Занимаем 80% ширины экрана */
-      margin: 20px auto; /* Автоматические отступы по горизонтали */
+    width: 80%; /* Занимаем 80% ширины экрана */
+    margin: 20px auto; /* Автоматические отступы по горизонтали */
   }
   body.dark-theme form {
-      width: 80%; /* Занимаем 80% ширины экрана */
-      margin: 20px auto; /* Автоматические отступы по горизонтали */
+    width: 80%; /* Занимаем 80% ширины экрана */
+    margin: 20px auto; /* Автоматические отступы по горизонтали */
   }
 }
 
@@ -125,41 +123,31 @@ body.dark-theme .buttons {
   max-width: 500px;
   margin-top: 20px;
 }
-body.light-theme #themeToggle {
-  position: relative;
-  left: 86%;
-  top: -7px; /* Изменено с -50px на -30px */
+#themeToggle {
+  /*position: static;
+  left: auto;
+  top: auto; /* Изменено с -50px на -30px */
+  position: fixed;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
+  border-radius: 0.5em;
+  font-weight: 600;
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  margin: 20px 0; /* Отступы вокруг кнопки */
+  border: none; /* Убираем границу */
+  font-size: 16px; /* Размер шрифта */
+  height: auto; /* Автоматическая высота */
+  width: auto; /* Автоматическая ширина */
+  /* z-index: 1;  /* Устанавливаем z-индекс кнопки выше, чем у формы */
+}
+body.light-theme #themeToggle {
   background-color: rgba(172, 172, 211, 0.712); /* Цвет фона кнопки */
   color: yellow; /* Цвет текста кнопки */
-  border-radius: 0.5em;
-  font-weight: 600;
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  margin: 20px 0; /* Отступы вокруг кнопки */
-  border: none; /* Убираем границу */
-  font-size: 16px; /* Размер шрифта */
-  height: auto; /* Автоматическая высота */
-  width: auto; /* Автоматическая ширина */
-  z-index: 1;  /* Устанавливаем z-индекс кнопки выше, чем у формы */
-
 }
 body.dark-theme #themeToggle {
-  position: relative;
-  left: 86%;
-  top: -7px; /* Изменено с -50px на -30px */
-  cursor: pointer;
   background-color: #000000; /* Цвет фона кнопки */
   color: #3a339b; /* Цвет текста кнопки */
-  border-radius: 0.5em;
-  font-weight: 600;
-  padding: 10px 20px; /* Отступы внутри кнопки */
-  margin: 20px 0; /* Отступы вокруг кнопки */
-  border: none; /* Убираем границу */
-  font-size: 16px; /* Размер шрифта */
-  height: auto; /* Автоматическая высота */
-  width: auto; /* Автоматическая ширина */
-  z-index: 1;  /* Устанавливаем z-индекс кнопки выше, чем у формы */
-
 }
 
 body.dark-theme form label {
@@ -202,22 +190,7 @@ body.dark-theme .buttons button {
 body.dark-theme .buttons button:hover {
   background-color: #4546a0;
 }
-body.light-theme .footer {
-  position: fixed;
-  bottom: 0;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  padding: 10px 30px;
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(38, 38, 247, 0.233);
-  color: rgba(50, 59, 55, 0.966);
-  height: 10px;
-  left: 0;
-}
-body.dark-theme .footer {
+.footer {
   position: fixed;
   bottom: 0;
   width: 86%;
@@ -226,11 +199,22 @@ body.dark-theme .footer {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  background-color: #01010e;
-  color: #4d4de2;
-
   left: 0;
   height: 10px;
+}
+body.light-theme .footer {
+  background-color: rgba(38, 38, 247, 0.233);
+  color: rgba(50, 59, 55, 0.966);
+}
+body.dark-theme .footer {
+  background-color: #01010e;
+  color: #4d4de2;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    width: 96%; /* Задаём  100% ширину */
+  }
 }
 #economy {
   margin-left: 73px;
